@@ -138,7 +138,8 @@ names
 
 ``` r
 pups_df = 
-  read_csv("data/FAS_pups.csv", 
+  read_csv(
+    "data/FAS_pups.csv", 
            skip = 3, 
            na = c("NA", ".", ""))
 ```
@@ -192,4 +193,10 @@ Doesn’t print as nicely
 ``` r
 litters_df_base = 
   read.csv("data/FAS_litters.csv")
+```
+
+## What about data exporting
+
+``` r
+write_csv(fotr_df, "data/fotr_df.csv")
 ```
