@@ -40,6 +40,31 @@ Sometimes skimming data is neat?
 skimr::skim(litters_df)
 ```
 
+## Fix the missingness
+
+```{r}
+litters_df = 
+  read_csv("data/FAS_litters.csv", na = c("NA", ".", ""))
+```
+
+
+## Import Pups data
+remove the first 3 rows, variables row is not on top
+clean variable names
+```{r}
+pups_df = 
+  read_csv("data/FAS_pups.csv", 
+           skip = 3, 
+           na = c("NA", ".", ""))
+
+pups_df = 
+  janitor::clean_names(pups_df)
+
+```
+
+```{r}
+
+```
 
 
 
