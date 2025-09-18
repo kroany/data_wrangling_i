@@ -1,5 +1,5 @@
 ---
-title: "data_manipulation"
+title: "Data Manipulation"
 author: "Kallan Roan"
 date: "2025-09-18"
 output: github_document
@@ -25,4 +25,80 @@ pups_df =
 pups_df = 
   janitor::clean_names(pups_df)
 ```
+
+## 'select'
+
+'select' selects variables form my dataframe.
+
+select specific of variables
+```{r}
+select(litters_df, group, litter_number, gd0_weight)
+```
+
+select a range
+```{r}
+select(litters_df, group:gd_of_birth)
+```
+
+select by removal
+
+remove the group variable
+```{r}
+select(litters_df, -group)
+```
+remove a range of variables
+
+```{r}
+select(litters_df, -(group:gd_of_birth))
+```
+
+select by prefix
+
+```{r}
+select(litters_df, group, starts_with("gd"))
+```
+
+rearrange by selecting
+
+```{r}
+select(litters_df, starts_with("gd"), group)
+```
+give me litter_number, and then give me everything else in the datset
+```{r}
+select(litters_df, litter_number, everything())
+```
+
+does the same thing as select
+
+```{r}
+relocate(litters_df, litter_number)
+```
+
+rename by selecting
+```{r}
+select(litters_df, GROUP = group, everything())
+rename(litters_df, GROUP = group)
+```
+
+What if I only select one variable
+
+```{r}
+select(litters_df, group)
+
+```
+Rarely use pull to pull something out of a dataframe
+get a vector
+
+```{r}
+pull(litters_df, group)
+```
+
+
+Learning Assessment: In the pups data, select the columns containing litter number, sex, and PD ears.
+```{r}
+select(pups_df, litter_number, sex, pd_ears )
+```
+
+
+
 
