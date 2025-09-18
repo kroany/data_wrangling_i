@@ -100,5 +100,68 @@ select(pups_df, litter_number, sex, pd_ears )
 ```
 
 
+## `filter`
+
+use `filter()` to filter out rows
+
+keep rows that have gd_of_birth of 20 and pups born alive = 6
+```{r}
+filter(litters_df, gd_of_birth == 20, pups_born_alive == 6)
+```
+
+look for more than two pups alive, more than or equal to, less than or equal to...
+
+```{r}
+filter(litters_df, pups_born_alive > 5)
+filter(litters_df, pups_born_alive >= 5)
+filter(litters_df, pups_born_alive <= 5)
+
+```
+
+look for non-matches
+
+```{r}
+filter(litters_df, pups_born_alive != 6)
+```
+
+
+match to a set
+
+look for groups that are in Con7 and Con8
+
+```{r}
+filter(litters_df, group %in% c("Con7", "Con8"))
+```
+
+filter out missing rows with `drop_na()`
+
+```{r}
+drop_na(litters_df)
+```
+
+only filter out missing rows in one variable only (gd0_weight)
+
+```{r}
+drop_na(litters_df, gd0_weight)
+```
+
+
+
+Learning Assessment: In the pups data:
+Filter to include only pups with sex 1
+Filter to include only pups with PD walk less than 11 and sex 2
+
+```{r}
+filter(pups_df, sex == 1)
+filter(pups_df, pd_walk < 11, sex == 2)
+```
+
+
+
+
+
+
+
+
 
 
