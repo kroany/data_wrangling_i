@@ -232,6 +232,20 @@ litters_df =
   )
 ```
 
+Learning Assessment: In the pups data:
+
+Create a variable that subtracts 7 from PD pivot
+Create a variable that is the sum of all the PD variables
+
+```{r}
+pups_df |> 
+  mutate(
+    sub_pd_pivot = pd_pivot - 7,
+    sum_pd = pd_ears + pd_eyes + pd_pivot + pd_walk
+  )
+```
+
+
 Learning Assessment: Write a chain of commands that:
 loads the pups data
 cleans the variable names
@@ -252,4 +266,9 @@ pups_df =
     pd_pivot_ge7 = pd_pivot >= 7
   )
 ```
+
+
+
+
+
 

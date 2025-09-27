@@ -703,6 +703,34 @@ litters_df =
     ## ℹ Use `spec()` to retrieve the full column specification for this data.
     ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
+Learning Assessment: In the pups data:
+
+Create a variable that subtracts 7 from PD pivot Create a variable that
+is the sum of all the PD variables
+
+``` r
+pups_df |> 
+  mutate(
+    sub_pd_pivot = pd_pivot - 7,
+    sum_pd = pd_ears + pd_eyes + pd_pivot + pd_walk
+  )
+```
+
+    ## # A tibble: 313 × 8
+    ##    litter_number   sex pd_ears pd_eyes pd_pivot pd_walk sub_pd_pivot sum_pd
+    ##    <chr>         <dbl>   <dbl>   <dbl>    <dbl>   <dbl>        <dbl>  <dbl>
+    ##  1 #85               1       4      13        7      11            0     35
+    ##  2 #85               1       4      13        7      12            0     36
+    ##  3 #1/2/95/2         1       5      13        7       9            0     34
+    ##  4 #1/2/95/2         1       5      13        8      10            1     36
+    ##  5 #5/5/3/83/3-3     1       5      13        8      10            1     36
+    ##  6 #5/5/3/83/3-3     1       5      14        6       9           -1     34
+    ##  7 #5/4/2/95/2       1      NA      14        5       9           -2     NA
+    ##  8 #4/2/95/3-3       1       4      13        6       8           -1     31
+    ##  9 #4/2/95/3-3       1       4      13        7       9            0     33
+    ## 10 #2/2/95/3-2       1       4      NA        8      10            1     NA
+    ## # ℹ 303 more rows
+
 Learning Assessment: Write a chain of commands that: loads the pups data
 cleans the variable names filters the data to include only pups with sex
 1 removes the PD ears variable creates a variable that indicates whether
